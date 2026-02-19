@@ -22,25 +22,14 @@ interface AnalyticsData {
   }>;
 }
 
-interface AnalyticsTabProps {
-  password: string;
-}
-
-export default function AnalyticsTab({ password }: AnalyticsTabProps) {
+export default function AnalyticsTab() {
   const [data, setData] = useState<AnalyticsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!password) {
-      setError("Enter the admin password in the header above to view analytics.");
-      setLoading(false);
-      return;
-    }
     setError("");
-    fetch("/api/analytics/stats", {
-      headers: { "X-Admin-Password": password },
-    })
+    fetch("/api/analytics/stats", { credentials: "include" })
       .then((r) => {
         if (!r.ok) throw new Error("Unauthorized");
         return r.json();
@@ -51,18 +40,12 @@ export default function AnalyticsTab({ password }: AnalyticsTabProps) {
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
-  }, [password]);
+  }, []);
 
   const refresh = () => {
-    if (!password) {
-      setError("Enter the admin password in the header above to view analytics.");
-      return;
-    }
     setLoading(true);
     setError("");
-    fetch("/api/analytics/stats", {
-      headers: { "X-Admin-Password": password },
-    })
+    fetch("/api/analytics/stats", { credentials: "include" })
       .then((r) => {
         if (!r.ok) throw new Error("Unauthorized");
         return r.json();

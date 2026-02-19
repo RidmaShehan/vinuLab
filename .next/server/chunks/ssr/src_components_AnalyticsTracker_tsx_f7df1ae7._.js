@@ -1,0 +1,3 @@
+module.exports=[27956,a=>{"use strict";var b=a.i(72131);function c(){return(0,b.useEffect)(()=>{fetch("/api/analytics/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path:"/",referrer:"u">typeof document&&document.referrer||null,userAgent:"u">typeof navigator?navigator.userAgent:null,screenWidth:null,screenHeight:null})}).catch(()=>{})},[]),null}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_components_AnalyticsTracker_tsx_f7df1ae7._.js.map

@@ -1,5 +1,51 @@
 {
-  "theme": { "defaultMode": "dark" },
+  "theme": {
+    "defaultMode": "dark"
+  },
+  "hero": {
+    "badge": "Web Studio",
+    "headline": "We craft",
+    "headlineHighlight": "digital experiences",
+    "subheading": "We engineer the success of your vision through technology and innovation.",
+    "stats": [
+      { "value": "15+", "label": "Industries" },
+      { "value": "5+", "label": "Years" }
+    ],
+    "scrollLabel": "Scroll"
+  },
+  "resultsSection": {
+    "heading": "Concrete results,",
+    "headingHighlight": "not just promises",
+    "subheading": "Transforming complexity into measurable impact.",
+    "results": [
+      { "value": "300%", "label": "Average Growth" },
+      { "value": "4 Weeks", "label": "Average Delivery Time" },
+      { "value": "98%", "label": "Satisfied Clients" }
+    ],
+    "testimonials": [
+      {
+        "quote": "We automated 90% of repetitive tasks. A total game-changer for our customer care operations.",
+        "stat": "90%",
+        "statLabel": "Automation",
+        "author": "Marco R.",
+        "role": "CEO • Studio Legale Associato"
+      },
+      {
+        "quote": "The manual workload has been drastically reduced. Now the team can focus on strategic growth.",
+        "stat": "60%",
+        "statLabel": "Efficiency",
+        "author": "Sara B.",
+        "role": "Operations Manager • Agenzia Digitale"
+      },
+      {
+        "quote": "The investment paid off in weeks. The ROI was immediate, clear, and measurable.",
+        "stat": "3x",
+        "statLabel": "ROI",
+        "author": "Luca V.",
+        "role": "Founder • E-commerce Fashion"
+      }
+    ]
+  },
   "services": {
     "heading": "Digital Solutions",
     "headingHighlight": "Without Compromise",
@@ -101,7 +147,7 @@
     "paragraph1": "We build end-to-end solutions by merging AI, software engineering and operational design.",
     "paragraph2": "We specialize in transforming complex business problems into elegant digital solutions. We don't just write code: we design the entire ecosystem to drive your business forward.",
     "memberNames": [
-      "Lorenzo",
+      "Chamil Jeewantha",
       "Andrea"
     ],
     "memberLabel": "Team"
@@ -169,7 +215,7 @@
     "subheading": "Discover how to modernize your digital presence and automate key processes to free up time and resources.",
     "buttonText": "Request a free consultation",
     "defaultMessage": "Hi, I'd like to request a free consultation!",
-    "contactEmail": "hello@vinulab.com",
+    "contactEmail": "hello@vinulab.comss",
     "linkedinUrl": "https://www.linkedin.com/company/vinulab/",
     "instagramUrl": "https://www.instagram.com/vinulab/",
     "privacyPolicyUrl": "https://vinulab.com/privacy-policy",

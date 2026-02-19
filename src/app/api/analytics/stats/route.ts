@@ -1,14 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAnalytics } from "@/lib/analytics";
+import { isAdminRequest } from "@/lib/auth";
 
 export async function GET(request: NextRequest) {
   try {
-    const password = request.headers.get("x-admin-password");
-    const expected = process.env.ADMIN_PASSWORD || "vinulab-admin";
-    if (password !== expected) {
+    if (!isAdminRequest(request)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-
     const visits = await getAnalytics();
 
     const uniqueIps = new Set(visits.map((v) => v.ip));

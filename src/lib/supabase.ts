@@ -1,13 +1,16 @@
 import { createClient } from "@supabase/supabase-js";
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 
-if (typeof window === "undefined" && (!url || !serviceKey) && process.env.NODE_ENV === "development") {
-  console.warn(
-    "[vinulab] Supabase not configured. Using file fallback for content/consultations/analytics. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database."
-  );
+/** Server-side Supabase client with service role (use in API routes / server code only). */
+export function getSupabase() {
+  if (!supabaseUrl || !supabaseServiceKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseServiceKey);
 }
 
-export const supabase =
-  url && serviceKey ? createClient(url, serviceKey, { auth: { persistSession: false } }) : null;
+export function hasSupabase(): boolean {
+  return Boolean(supabaseUrl && supabaseServiceKey);
+}

@@ -3,16 +3,17 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const results = [
+const defaultResults = [
   { value: "300%", label: "Average Growth" },
   { value: "4 Weeks", label: "Average Delivery Time" },
   { value: "98%", label: "Satisfied Clients" },
 ];
 
-const testimonials = [
+const defaultTestimonials = [
   {
     quote: "We automated 90% of repetitive tasks. A total game-changer for our customer care operations.",
     stat: "90%",
@@ -37,6 +38,13 @@ const testimonials = [
 ];
 
 export default function HorizontalProjects() {
+  const content = useContent();
+  const section = content?.resultsSection;
+  const results = section?.results ?? defaultResults;
+  const testimonials = section?.testimonials ?? defaultTestimonials;
+  const heading = section?.heading ?? "Concrete results,";
+  const headingHighlight = section?.headingHighlight ?? "not just promises";
+  const subheading = section?.subheading ?? "Transforming complexity into measurable impact.";
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -84,14 +92,14 @@ export default function HorizontalProjects() {
         {/* Concrete results */}
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-            Concrete results,{" "}
+            {heading}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
-              not just promises
+              {headingHighlight}
             </span>
             .
           </h2>
           <p className="mt-6 text-xl text-zinc-400">
-            Transforming complexity into measurable impact.
+            {subheading}
           </p>
         </div>
 

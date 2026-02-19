@@ -7,11 +7,20 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const defaultServices = {
+  heading: "Digital Solutions",
+  headingHighlight: "Without Compromise",
+  subheading: "Advanced technology and premium design. We build the tools for your future.",
+  items: [
+    { id: "01", title: "Web & E-commerce", description: "High-performance platforms.", tags: ["Shopify", "SEO"] },
+    { id: "02", title: "AI & Automation", description: "Optimize workflows.", tags: ["AI Agents", "Automation"] },
+    { id: "03", title: "App & Software", description: "Bespoke software solutions.", tags: ["iOS/Android", "Custom Systems"] },
+  ],
+};
+
 export default function ServiceGrid() {
   const content = useContent();
-  if (!content) return null;
-
-  const { services: s } = content;
+  const s = content?.services ?? defaultServices;
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);

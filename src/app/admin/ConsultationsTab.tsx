@@ -3,27 +3,16 @@
 import { useState, useEffect } from "react";
 import type { ConsultationRequest } from "@/lib/consultations";
 
-interface ConsultationsTabProps {
-  password: string;
-}
-
-export default function ConsultationsTab({ password }: ConsultationsTabProps) {
+export default function ConsultationsTab() {
   const [requests, setRequests] = useState<ConsultationRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<ConsultationRequest | null>(null);
 
   const fetchRequests = () => {
-    if (!password) {
-      setError("Enter the admin password in the header above.");
-      setLoading(false);
-      return;
-    }
     setLoading(true);
     setError("");
-    fetch("/api/consultations", {
-      headers: { "X-Admin-Password": password },
-    })
+    fetch("/api/consultations", { credentials: "include" })
       .then((r) => {
         if (!r.ok) throw new Error("Unauthorized");
         return r.json();
@@ -38,17 +27,14 @@ export default function ConsultationsTab({ password }: ConsultationsTabProps) {
 
   useEffect(() => {
     fetchRequests();
-  }, [password]);
+  }, []);
 
   const toggleGotIt = async (id: string, gotIt: boolean) => {
-    if (!password) return;
     try {
       const res = await fetch(`/api/consultations/${id}`, {
         method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Admin-Password": password,
-        },
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ gotIt }),
       });
       if (!res.ok) throw new Error("Update failed");

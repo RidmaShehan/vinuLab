@@ -1,7 +1,9 @@
 {
   "/(site)/page": "app/(site)/page.js",
   "/admin/page": "app/admin/page.js",
+  "/api/analytics/stats/route": "app/api/analytics/stats/route.js",
   "/api/analytics/track/route": "app/api/analytics/track/route.js",
+  "/api/consultations/route": "app/api/consultations/route.js",
   "/api/content/route": "app/api/content/route.js",
   "/api/content/status/route": "app/api/content/status/route.js"
 }

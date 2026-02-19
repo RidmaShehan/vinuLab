@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addConsultation, getConsultations } from "@/lib/consultations";
-
-function isAdmin(request: NextRequest): boolean {
-  const password = request.headers.get("x-admin-password");
-  const expected = process.env.ADMIN_PASSWORD || "vinulab-admin";
-  return password === expected;
-}
+import { isAdminRequest } from "@/lib/auth";
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +19,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
-  if (!isAdmin(request)) {
+  if (!isAdminRequest(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   try {

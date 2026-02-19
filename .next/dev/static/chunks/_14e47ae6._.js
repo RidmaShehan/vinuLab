@@ -62,83 +62,42 @@ __turbopack_context__.s([
     "ContentProvider",
     ()=>ContentProvider,
     "useContent",
-    ()=>useContent,
-    "useContentState",
-    ()=>useContentState
+    ()=>useContent
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 "use client";
 ;
 const ContentContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);
 function ContentProvider({ children }) {
     _s();
     const [content, setContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const fetchContent = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
-        "ContentProvider.useCallback[fetchContent]": ()=>{
-            setError(null);
-            setLoading(true);
-            fetch("/api/content").then({
-                "ContentProvider.useCallback[fetchContent]": (res)=>{
-                    if (!res.ok) throw new Error("Failed to load content");
-                    return res.json();
-                }
-            }["ContentProvider.useCallback[fetchContent]"]).then({
-                "ContentProvider.useCallback[fetchContent]": (data)=>{
-                    setContent(data);
-                    setError(null);
-                }
-            }["ContentProvider.useCallback[fetchContent]"]).catch({
-                "ContentProvider.useCallback[fetchContent]": (err)=>{
-                    setError(err instanceof Error ? err.message : "Failed to load content");
-                    setContent(null);
-                }
-            }["ContentProvider.useCallback[fetchContent]"]).finally({
-                "ContentProvider.useCallback[fetchContent]": ()=>setLoading(false)
-            }["ContentProvider.useCallback[fetchContent]"]);
-        }
-    }["ContentProvider.useCallback[fetchContent]"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ContentProvider.useEffect": ()=>{
-            fetchContent();
+            fetch("/api/content").then({
+                "ContentProvider.useEffect": (res)=>res.json()
+            }["ContentProvider.useEffect"]).then(setContent).catch(console.error);
         }
-    }["ContentProvider.useEffect"], [
-        fetchContent
-    ]);
-    const value = {
-        content,
-        loading,
-        error,
-        retry: fetchContent
-    };
+    }["ContentProvider.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ContentContext.Provider, {
-        value: value,
+        value: content,
         children: children
     }, void 0, false, {
         fileName: "[project]/src/context/ContentContext.tsx",
-        lineNumber: 51,
+        lineNumber: 19,
         columnNumber: 5
     }, this);
 }
-_s(ContentProvider, "pXdr9GWhHXGyV/9lpTH5nOfUhO0=");
+_s(ContentProvider, "KAjm4yvD8rjPsAfNiedPNdoqWs4=");
 _c = ContentProvider;
 function useContent() {
     _s1();
     const ctx = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(ContentContext);
-    return ctx?.content ?? null;
-}
-_s1(useContent, "/dMy7t63NXD4eYACoT93CePwGrg=");
-function useContentState() {
-    _s2();
-    const ctx = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(ContentContext);
-    if (!ctx) throw new Error("useContentState must be used within ContentProvider");
     return ctx;
 }
-_s2(useContentState, "/dMy7t63NXD4eYACoT93CePwGrg=");
+_s1(useContent, "/dMy7t63NXD4eYACoT93CePwGrg=");
 var _c;
 __turbopack_context__.k.register(_c, "ContentProvider");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

@@ -5,7 +5,7 @@ import type { Content, ThemeMode } from "@/lib/content";
 import AnalyticsTab from "./AnalyticsTab";
 import ConsultationsTab from "./ConsultationsTab";
 
-const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+const TABS = ["Hero", "Results", "Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
 
 export default function AdminPage() {
   const [password, setPassword] = useState("");
@@ -14,49 +14,77 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
-  const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Services");
-  const [contentSource, setContentSource] = useState<"database" | "file" | null>(null);
+  const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Hero");
 
   useEffect(() => {
-    fetch("/api/content")
-      .then((r) => r.json())
-      .then(setContent)
+    fetch("/api/auth/session", { credentials: "include" })
+      .then((r) => {
+        if (r.ok) {
+          setAuthenticated(true);
+          return fetch("/api/content", { credentials: "include" }).then((c) => c.json());
+        }
+        setAuthenticated(false);
+        return null;
+      })
+      .then((data) => {
+        if (data) setContent(data);
+      })
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {
-    fetch("/api/content/status")
-      .then((r) => r.json())
-      .then((data) => setContentSource(data.source ?? null))
-      .catch(() => setContentSource(null));
-  }, []);
-
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setAuthenticated(true);
     setMessage("");
+    if (!password.trim()) {
+      setMessage("Enter your password.");
+      return;
+    }
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ password: password.trim() }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setMessage(data.error || "Invalid password");
+        return;
+      }
+      setAuthenticated(true);
+      setPassword("");
+      const contentRes = await fetch("/api/content", { credentials: "include" });
+      if (contentRes.ok) setContent(await contentRes.json());
+    } catch {
+      setMessage("Login failed");
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
+      setAuthenticated(false);
+      setMessage("");
+    } catch {
+      setAuthenticated(false);
+    }
   };
 
   const handleSave = async () => {
-    if (!content || !password) {
-      setMessage("Please enter the admin password to save.");
-      return;
-    }
+    if (!content) return;
     setSaving(true);
     setMessage("");
     try {
       const res = await fetch("/api/content", {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Admin-Password": password,
-        },
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(content),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(typeof data?.error === "string" ? data.error : "Save failed");
+        throw new Error(data.error || "Save failed");
       }
       setMessage("Saved successfully! Refresh the main site to see changes.");
     } catch (err) {
@@ -84,7 +112,7 @@ export default function AdminPage() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Default: vinulab-admin"
+            placeholder="Admin password"
             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400"
             required
           />
@@ -95,7 +123,7 @@ export default function AdminPage() {
             Log in
           </button>
           <p className="text-xs text-zinc-500">
-            Default password: vinulab-admin. Set ADMIN_PASSWORD in .env.local for production.
+            Set ADMIN_PASSWORD in .env.local. Session lasts 24 hours and is stored in an HTTP-only cookie.
           </p>
         </form>
       </div>
@@ -190,11 +218,6 @@ export default function AdminPage() {
       <header className="border-b border-white/10 px-6 py-4 flex justify-between items-center flex-wrap gap-4">
         <h1 className="text-xl font-bold">VinuLab Admin</h1>
         <div className="flex items-center gap-4 flex-wrap">
-          {contentSource && (
-            <span className={`text-xs px-2 py-1 rounded ${contentSource === "database" ? "bg-green-500/20 text-green-400" : "bg-amber-500/20 text-amber-400"}`} title={contentSource === "database" ? "Content is stored in Supabase" : "Using file fallback. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database."}>
-              {contentSource === "database" ? "● Database" : "○ File"}
-            </span>
-          )}
           <div className="flex items-center gap-2">
             <span className="text-sm text-zinc-400">Site theme:</span>
             <select
@@ -206,19 +229,19 @@ export default function AdminPage() {
               <option value="light">Light</option>
             </select>
           </div>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="e.g. vinulab-admin"
-            className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm w-44 placeholder-zinc-500"
-          />
           <button
             onClick={handleSave}
             disabled={saving}
             className="px-6 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 disabled:opacity-50"
           >
             {saving ? "Saving..." : "Save"}
+          </button>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="px-4 py-2 rounded-lg border border-white/20 text-zinc-300 hover:text-white hover:border-white/40 text-sm transition-colors"
+          >
+            Log out
           </button>
           <a href="/" className="text-zinc-400 hover:text-white text-sm">View site →</a>
         </div>
@@ -246,6 +269,192 @@ export default function AdminPage() {
         </aside>
 
         <main className={`flex-1 p-8 ${activeTab === "Analytics" ? "max-w-6xl" : "max-w-4xl"}`}>
+          {activeTab === "Hero" && (
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold mb-6">Hero (top section)</h2>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Badge (small label)</label>
+                <input
+                  value={content.hero.badge}
+                  onChange={(e) => update("hero", { badge: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Headline (before highlight)</label>
+                <input
+                  value={content.hero.headline}
+                  onChange={(e) => update("hero", { headline: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Headline highlight (gradient text)</label>
+                <input
+                  value={content.hero.headlineHighlight}
+                  onChange={(e) => update("hero", { headlineHighlight: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Subheading</label>
+                <textarea
+                  value={content.hero.subheading}
+                  onChange={(e) => update("hero", { subheading: e.target.value })}
+                  rows={2}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-2">Stats (value + label)</label>
+                {content.hero.stats.map((s, i) => (
+                  <div key={i} className="flex gap-2 mb-2">
+                    <input
+                      placeholder="Value"
+                      value={s.value}
+                      onChange={(e) => {
+                        const stats = [...content.hero.stats];
+                        stats[i] = { ...stats[i], value: e.target.value };
+                        update("hero", { stats });
+                      }}
+                      className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                    <input
+                      placeholder="Label"
+                      value={s.label}
+                      onChange={(e) => {
+                        const stats = [...content.hero.stats];
+                        stats[i] = { ...stats[i], label: e.target.value };
+                        update("hero", { stats });
+                      }}
+                      className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Scroll label (bottom)</label>
+                <input
+                  value={content.hero.scrollLabel}
+                  onChange={(e) => update("hero", { scrollLabel: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+            </div>
+          )}
+
+          {activeTab === "Results" && (
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold mb-6">Results & Testimonials</h2>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-1">Heading / Highlight / Subheading</label>
+                <input
+                  value={content.resultsSection.heading}
+                  onChange={(e) => update("resultsSection", { heading: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 mb-2"
+                />
+                <input
+                  value={content.resultsSection.headingHighlight}
+                  onChange={(e) => update("resultsSection", { headingHighlight: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 mb-2"
+                />
+                <textarea
+                  value={content.resultsSection.subheading}
+                  onChange={(e) => update("resultsSection", { subheading: e.target.value })}
+                  rows={2}
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-2">Results (value + label)</label>
+                {content.resultsSection.results.map((r, i) => (
+                  <div key={i} className="flex gap-2 mb-2">
+                    <input
+                      placeholder="Value"
+                      value={r.value}
+                      onChange={(e) => {
+                        const results = [...content.resultsSection.results];
+                        results[i] = { ...results[i], value: e.target.value };
+                        update("resultsSection", { results });
+                      }}
+                      className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                    <input
+                      placeholder="Label"
+                      value={r.label}
+                      onChange={(e) => {
+                        const results = [...content.resultsSection.results];
+                        results[i] = { ...results[i], label: e.target.value };
+                        update("resultsSection", { results });
+                      }}
+                      className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div>
+                <label className="block text-sm text-zinc-400 mb-2">Testimonials</label>
+                {content.resultsSection.testimonials.map((t, i) => (
+                  <div key={i} className="p-4 rounded-xl border border-white/10 space-y-2 mb-4">
+                    <textarea
+                      placeholder="Quote"
+                      value={t.quote}
+                      onChange={(e) => {
+                        const testimonials = [...content.resultsSection.testimonials];
+                        testimonials[i] = { ...testimonials[i], quote: e.target.value };
+                        update("resultsSection", { testimonials });
+                      }}
+                      rows={2}
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                    <div className="flex gap-2">
+                      <input
+                        placeholder="Stat"
+                        value={t.stat}
+                        onChange={(e) => {
+                          const testimonials = [...content.resultsSection.testimonials];
+                          testimonials[i] = { ...testimonials[i], stat: e.target.value };
+                          update("resultsSection", { testimonials });
+                        }}
+                        className="w-24 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                      />
+                      <input
+                        placeholder="Stat label"
+                        value={t.statLabel}
+                        onChange={(e) => {
+                          const testimonials = [...content.resultsSection.testimonials];
+                          testimonials[i] = { ...testimonials[i], statLabel: e.target.value };
+                          update("resultsSection", { testimonials });
+                        }}
+                        className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                      />
+                    </div>
+                    <input
+                      placeholder="Author"
+                      value={t.author}
+                      onChange={(e) => {
+                        const testimonials = [...content.resultsSection.testimonials];
+                        testimonials[i] = { ...testimonials[i], author: e.target.value };
+                        update("resultsSection", { testimonials });
+                      }}
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                    <input
+                      placeholder="Role"
+                      value={t.role}
+                      onChange={(e) => {
+                        const testimonials = [...content.resultsSection.testimonials];
+                        testimonials[i] = { ...testimonials[i], role: e.target.value };
+                        update("resultsSection", { testimonials });
+                      }}
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {activeTab === "Services" && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold mb-6">Services</h2>
@@ -634,11 +843,11 @@ export default function AdminPage() {
           )}
 
           {activeTab === "Consultations" && (
-            <ConsultationsTab password={password} />
+            <ConsultationsTab />
           )}
 
           {activeTab === "Analytics" && (
-            <AnalyticsTab password={password} />
+            <AnalyticsTab />
           )}
         </main>
       </div>

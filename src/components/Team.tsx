@@ -7,11 +7,18 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const defaultTeam = {
+  heading: "We are developers",
+  headingHighlight: "and architects of efficiency",
+  paragraph1: "We build end-to-end solutions by merging AI, software engineering and operational design.",
+  paragraph2: "We specialize in transforming complex business problems into elegant digital solutions.",
+  memberNames: ["Lorenzo", "Andrea"],
+  memberLabel: "Team",
+};
+
 export default function Team() {
   const content = useContent();
-  if (!content) return null;
-
-  const t = content.team;
+  const t = content?.team ?? defaultTeam;
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 

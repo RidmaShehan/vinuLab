@@ -223,6 +223,7 @@ function Navbar() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
                                 className: "p-2 rounded-lg transition-colors hover:opacity-80",
                                 style: {
                                     color: "var(--nav-text)"
@@ -241,8 +242,8 @@ function Navbar() {
                                         d: "M6 18L18 6M6 6l12 12"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 113,
-                                        columnNumber: 15
+                                        lineNumber: 114,
+                                        columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                         strokeLinecap: "round",
                                         strokeLinejoin: "round",
@@ -250,13 +251,13 @@ function Navbar() {
                                         d: "M4 6h16M4 12h16M4 18h16"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 115,
-                                        columnNumber: 15
+                                        lineNumber: 116,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 111,
-                                    columnNumber: 11
+                                    lineNumber: 112,
+                                    columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
@@ -293,17 +294,17 @@ function Navbar() {
                             children: link.label
                         }, link.href, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 130,
+                            lineNumber: 131,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Navbar.tsx",
-                    lineNumber: 128,
+                    lineNumber: 129,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 124,
+                lineNumber: 125,
                 columnNumber: 9
             }, this)
         ]

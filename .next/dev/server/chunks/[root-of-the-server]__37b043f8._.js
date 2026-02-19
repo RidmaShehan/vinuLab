@@ -57,21 +57,24 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "supabase",
-    ()=>supabase
+    "getSupabase",
+    ()=>getSupabase,
+    "hasSupabase",
+    ()=>hasSupabase
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/index.mjs [app-route] (ecmascript) <locals>");
 ;
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (("TURBOPACK compile-time value", "undefined") === "undefined" && (!url || !serviceKey) && ("TURBOPACK compile-time value", "development") === "development") {
-    console.warn("[vinulab] Supabase not configured. Using file fallback for content/consultations/analytics. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database.");
-}
-const supabase = url && serviceKey ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(url, serviceKey, {
-    auth: {
-        persistSession: false
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+function getSupabase() {
+    if (!supabaseUrl || !supabaseServiceKey) {
+        return null;
     }
-}) : null;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(supabaseUrl, supabaseServiceKey);
+}
+function hasSupabase() {
+    return Boolean(supabaseUrl && supabaseServiceKey);
+}
 }),
 "[project]/src/lib/analytics.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -88,61 +91,73 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts
 ;
 ;
 ;
-const analyticsPath = ()=>__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd(), "src", "data", "analytics.json");
-function getAnalyticsFromFile() {
+const getFilePath = ()=>__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd(), "src", "data", "analytics.json");
+function readFromFile() {
     try {
-        const raw = __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].readFileSync(analyticsPath(), "utf-8");
+        const raw = __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].readFileSync(getFilePath(), "utf-8");
         return JSON.parse(raw);
     } catch  {
         return [];
     }
 }
+function writeToFile(data) {
+    __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].writeFileSync(getFilePath(), JSON.stringify(data, null, 2), "utf-8");
+}
 async function getAnalytics() {
-    if (__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabase"]) {
-        const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabase"].from("analytics_visits").select("*").order("timestamp", {
-            ascending: false
-        });
-        if (!error && data) {
-            return data.map((r)=>({
-                    id: r.id,
-                    timestamp: r.timestamp,
-                    path: r.path,
-                    ip: r.ip,
-                    country: r.country,
-                    region: r.region,
-                    city: r.city,
-                    ll: r.ll,
-                    userAgent: r.user_agent,
-                    referrer: r.referrer,
-                    screenWidth: r.screen_width,
-                    screenHeight: r.screen_height
-                }));
+    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getSupabase"])();
+    if (supabase) {
+        try {
+            const { data, error } = await supabase.from("analytics_events").select("id, timestamp, path, ip, country, region, city, ll, user_agent, referrer, screen_width, screen_height").order("timestamp", {
+                ascending: false
+            });
+            if (!error && Array.isArray(data)) {
+                return data.map((row)=>({
+                        id: row.id,
+                        timestamp: row.timestamp,
+                        path: row.path ?? "",
+                        ip: row.ip ?? "",
+                        country: row.country ?? undefined,
+                        region: row.region ?? undefined,
+                        city: row.city ?? undefined,
+                        ll: Array.isArray(row.ll) && row.ll.length >= 2 ? row.ll : undefined,
+                        userAgent: row.user_agent ?? undefined,
+                        referrer: row.referrer ?? undefined,
+                        screenWidth: row.screen_width ?? undefined,
+                        screenHeight: row.screen_height ?? undefined
+                    }));
+            }
+        } catch (e) {
+            console.warn("Supabase analytics fetch failed, using file:", e);
         }
     }
-    return getAnalyticsFromFile();
+    return readFromFile();
 }
 async function appendVisit(record) {
-    if (__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabase"]) {
-        const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabase"].from("analytics_visits").insert({
-            id: record.id,
-            timestamp: record.timestamp,
-            path: record.path,
-            ip: record.ip,
-            country: record.country,
-            region: record.region,
-            city: record.city,
-            ll: record.ll,
-            user_agent: record.userAgent,
-            referrer: record.referrer,
-            screen_width: record.screenWidth,
-            screen_height: record.screenHeight
-        });
-        if (error) throw new Error(error.message);
-        return;
+    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getSupabase"])();
+    if (supabase) {
+        try {
+            const { error } = await supabase.from("analytics_events").insert({
+                timestamp: record.timestamp,
+                path: record.path,
+                ip: record.ip,
+                country: record.country ?? null,
+                region: record.region ?? null,
+                city: record.city ?? null,
+                ll: record.ll ?? null,
+                user_agent: record.userAgent ?? null,
+                referrer: record.referrer ?? null,
+                screen_width: record.screenWidth ?? null,
+                screen_height: record.screenHeight ?? null
+            });
+            if (!error) return;
+            throw new Error(error.message);
+        } catch (e) {
+            console.warn("Supabase analytics insert failed, using file:", e);
+        }
     }
-    const data = getAnalyticsFromFile();
+    const data = readFromFile();
     data.push(record);
-    __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].writeFileSync(analyticsPath(), JSON.stringify(data, null, 2), "utf-8");
+    writeToFile(data);
 }
 }),
 "[project]/src/app/api/analytics/track/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {

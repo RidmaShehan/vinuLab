@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs";
+import { supabase } from "./supabase";
 
 export type ThemeMode = "light" | "dark";
 
@@ -54,13 +55,34 @@ export interface Content {
 
 const getContentPath = () => path.join(process.cwd(), "src", "data", "content.json");
 
-export function getContent(): Content {
+function getContentFromFile(): Content {
   const filePath = getContentPath();
   const raw = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(raw) as Content;
 }
 
-export function saveContent(content: Content): void {
+export async function getContent(): Promise<Content> {
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("site_content")
+      .select("data")
+      .eq("id", 1)
+      .single();
+    if (!error && data?.data) {
+      return data.data as Content;
+    }
+  }
+  return getContentFromFile();
+}
+
+export async function saveContent(content: Content): Promise<void> {
+  if (supabase) {
+    const { error } = await supabase
+      .from("site_content")
+      .upsert({ id: 1, data: content, updated_at: new Date().toISOString() }, { onConflict: "id" });
+    if (!error) return;
+    throw new Error(error.message);
+  }
   const filePath = getContentPath();
   fs.writeFileSync(filePath, JSON.stringify(content, null, 2), "utf-8");
 }

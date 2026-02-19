@@ -21,7 +21,7 @@ export async function PATCH(
     if (typeof gotIt !== "boolean") {
       return NextResponse.json({ error: "gotIt must be boolean" }, { status: 400 });
     }
-    const updated = updateConsultationGotIt(id, gotIt);
+    const updated = await updateConsultationGotIt(id, gotIt);
     if (!updated) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }

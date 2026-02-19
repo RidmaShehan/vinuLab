@@ -3,7 +3,7 @@ import { getContent, saveContent, type Content } from "@/lib/content";
 
 export async function GET() {
   try {
-    const content = getContent();
+    const content = await getContent();
     return NextResponse.json(content);
   } catch (error) {
     console.error("Failed to load content:", error);
@@ -20,7 +20,7 @@ export async function PUT(request: NextRequest) {
     }
 
     const body = (await request.json()) as Content;
-    saveContent(body);
+    await saveContent(body);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Failed to save content:", error);

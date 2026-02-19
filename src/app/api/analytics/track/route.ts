@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
       screenHeight: typeof screenHeight === "number" ? screenHeight : undefined,
     };
 
-    appendVisit(record);
+    await appendVisit(record);
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Analytics track error:", err);

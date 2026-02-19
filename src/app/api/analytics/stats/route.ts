@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const visits = getAnalytics();
+    const visits = await getAnalytics();
 
     const uniqueIps = new Set(visits.map((v) => v.ip));
     const byCountry: Record<string, number> = {};

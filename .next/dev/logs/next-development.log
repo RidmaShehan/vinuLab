@@ -1,0 +1,969 @@
+[00:00:00.619] Server  LOG     ✓ Ready in 415ms
+[00:01:51.901] Server  LOG     ✓ Compiled in 383ms
+[00:31:19.542] Server  LOG     ✓ Compiled in 63ms
+[00:31:20.274] Server  LOG     ✓ Compiled in 67ms
+[00:34:25.731] Server  LOG     ✓ Compiled in 80ms
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:51:33.900] Browser ERROR   unhandledRejection: undefined
+[00:54:26.630] Server  LOG     ✓ Compiled in 70ms
+[00:54:31.471] Server  LOG     ✓ Compiled in 40ms
+[00:54:34.198] Server  LOG     ✓ Compiled in 26ms
+[00:54:35.516] Server  LOG     ✓ Compiled in 13ms
+[00:54:38.617] Server  LOG     ✓ Compiled in 17ms
+[00:54:44.720] Server  LOG     ✓ Compiled in 17ms
+[00:54:47.033] Server  LOG     ✓ Compiled in 14ms
+[00:54:49.503] Server  LOG     ✓ Compiled in 13ms
+[00:54:51.893] Server  LOG     ✓ Compiled in 22ms
+[00:54:54.360] Server  LOG     ✓ Compiled in 14ms
+[00:54:58.866] Server  LOG     ✓ Compiled in 18ms
+[01:02:05.222] Server  LOG     ✓ Compiled in 163ms
+[01:02:05.679] Server  LOG     ✓ Compiled in 8ms
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[01:25:43.610] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[02:50:43.382] Server  LOG     ✓ Compiled in 128ms
+[03:08:54.275] Server  LOG     ✓ Compiled in 198ms
+[03:09:06.519] Server  LOG     ✓ Compiled in 401ms
+[03:09:12.961] Server  LOG     ✓ Compiled in 59ms
+[03:09:20.841] Server  LOG     ✓ Compiled in 51ms
+[03:10:06.160] Server  LOG     ✓ Compiled in 32ms
+[03:10:24.964] Browser LOG     There was a problem when fetching the data:  {}
+[03:10:24.964] Browser LOG     There was a problem when fetching the data:  {}
+[03:10:36.640] Browser ERROR   uncaughtError: ReferenceError: Can't find variable: ComposableMap
+[03:10:42.300] Server  LOG     ✓ Compiled in 128ms
+[03:11:27.324] Server  LOG     ✓ Compiled in 41ms
+[03:16:37.504] Server  LOG     ✓ Compiled in 58ms
+[03:17:22.493] Server  LOG     ✓ Compiled in 28ms
+[03:17:26.976] Server  LOG     ✓ Compiled in 19ms
+[03:17:29.517] Server  LOG     ✓ Compiled in 37ms
+[03:17:35.470] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.473] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.475] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.479] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.482] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.484] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.486] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.493] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.496] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.498] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.500] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.502] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.504] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.506] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.507] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.508] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.511] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.512] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.514] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:35.517] Server  ERROR   ⨯ ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:17:58.614] Server  LOG     ✓ Compiled in 66ms
+[03:18:16.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:18:25.374] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:23:28.453] Browser ERROR   ./src/app/admin/page.tsx:6:1
+Module not found: Can't resolve './ConsultationsTab'
+  4 | import type { Content } from "@/lib/content";
+  5 | import AnalyticsTab from "./AnalyticsTab";
+> 6 | import ConsultationsTab from "./ConsultationsTab";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const TABS = ["Services", "Projects", "Team", "Blog", "FAQ", "Contact", "Consultations", "Analytics"] as const;
+  9 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/page.tsx [Client Component Browser]
+    ./src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/page.tsx [Client Component SSR]
+    ./src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[04:04:17.260] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:06:34.989] Server  LOG     ✓ Compiled in 181ms
+[04:06:38.202] Server  LOG     ✓ Compiled in 9ms
+[04:06:38.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:06:59.913] Browser ERROR   ./src/components/Navbar.tsx:137:1
+Parsing ecmascript source code failed
+  135 |     </nav>
+  136 |   );
+> 137 | }
+      | ^
+  138 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[04:07:00.551] Server  LOG     ✓ Compiled in 11ms
+[04:07:13.174] Server  LOG     ✓ Compiled in 56ms
+[04:07:18.801] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:07:27.376] Server  LOG     ✓ Compiled in 40ms
+[04:07:28.446] Server  LOG     ✓ Compiled in 31ms
+[04:07:30.033] Server  LOG     ✓ Compiled in 23ms
+[04:07:37.866] Server  LOG     ✓ Compiled in 40ms
+[04:08:05.702] Server  LOG     ✓ Compiled in 58ms
+[04:08:14.584] Server  LOG     ✓ Compiled in 38ms
+[04:08:31.080] Server  LOG     ✓ Compiled in 55ms
+[04:10:28.827] Browser ERROR   ./src/components/Navbar.tsx:137:1
+Parsing ecmascript source code failed
+  135 |     </nav>
+  136 |   );
+> 137 | }
+      | ^
+  138 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[04:10:41.464] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:11:35.449] Server  LOG     ✓ Compiled in 303ms
+[04:11:35.945] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:13:07.679] Server  LOG     ✓ Compiled in 91ms
+[04:13:10.842] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:13:23.030] Server  LOG     ✓ Compiled in 107ms
+[04:13:40.255] Server  LOG     ✓ Compiled in 51ms
+[04:13:52.681] Browser ERROR   ./src/components/Navbar.tsx:138:1
+Parsing ecmascript source code failed
+  136 |     </nav>
+  137 |   );
+> 138 | }
+      | ^
+  139 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[04:14:14.340] Server  LOG     ✓ Compiled in 50ms
+[04:14:38.772] Server  LOG     ✓ Compiled in 87ms
+[04:14:45.290] Server  LOG     ✓ Compiled in 85ms
+[04:15:34.868] Server  LOG     ✓ Compiled in 79ms
+[04:41:00.551] Server  LOG     ✓ Compiled in 328ms
+[04:42:03.196] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:03.196] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:55.679] Server  LOG     ✓ Compiled in 105ms
+[04:42:56.715] Server  LOG     ✓ Compiled in 90ms
+[04:42:58.482] Server  LOG     ✓ Compiled in 246ms
+[04:42:58.841] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:58.841] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:58.841] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:58.841] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/admin. Falling back to browser navigation. {}
+[04:42:58.841] Browser ERROR   unhandledRejection: undefined
+[04:42:58.841] Browser ERROR   unhandledRejection: undefined
+[04:43:21.458] Server  LOG     ✓ Compiled in 91ms
+[04:43:21.570] Browser ERROR   ./src/components/Navbar.tsx:136:1
+Parsing ecmascript source code failed
+  134 |     </nav>
+  135 |   );
+> 136 | }
+      | ^
+  137 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[04:43:29.735] Server  LOG     ✓ Compiled in 41ms
+[04:43:32.717] Server  LOG     ✓ Compiled in 51ms
+[04:43:43.064] Server  LOG     ✓ Compiled in 40ms
+[04:43:48.453] Server  LOG     ✓ Compiled in 44ms
+[04:43:55.418] Server  LOG     ✓ Compiled in 75ms
+[05:05:14.973] Server  LOG     ✓ Compiled in 435ms
+[05:05:27.326] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[05:05:27.326] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[05:06:09.020] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="outfit_f3a568e1-module__IgKfaq__variable space_grotesk_1d8c5cc8-module__-5dOoa__v..."
+-                         webcrx=""
+                        >
+                  ...
+
+[05:10:55.929] Server  LOG     ✓ Compiled in 97ms
+[05:10:57.277] Server  LOG     ✓ Compiled in 0ms
+[05:10:58.702] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="outfit_f3a568e1-module__IgKfaq__variable space_grotesk_1d8c5cc8-module__-5dOoa__v..."
+-                         webcrx=""
+                        >
+                  ...
+
+[05:10:59.046] Server  LOG     ✓ Compiled in 330ms
+[05:10:59.740] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[05:10:59.740] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[05:10:59.741] Browser ERROR   unhandledRejection: undefined
+[05:11:10.009] Server  LOG     ✓ Compiled in 69ms
+[05:11:22.898] Server  LOG     ✓ Compiled in 83ms
+[05:11:25.846] Server  LOG     ✓ Compiled in 36ms
+[05:11:50.618] Server  LOG     ✓ Compiled in 123ms
+[05:11:50.823] Browser ERROR   ./src/components/Navbar.tsx:140:1
+Parsing ecmascript source code failed
+  138 |     </nav>
+  139 |   );
+> 140 | }
+      | ^
+  141 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:11:51.521] Browser ERROR   ./src/components/Navbar.tsx:140:1
+Parsing ecmascript source code failed
+  138 |     </nav>
+  139 |   );
+> 140 | }
+      | ^
+  141 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:11:56.707] Server  LOG     ✓ Compiled in 40ms
+[05:11:56.813] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:11:56.818] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:05.230] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:05.289] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:12.173] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:12.277] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:20.605] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:12:20.640] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:13:00.634] Server  LOG     ✓ Compiled in 154ms
+[05:13:00.741] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:13:00.921] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:43:17.538] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:43:17.539] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx
+[05:43:17.898] Browser ERROR   ./src/components/Navbar.tsx:144:1
+Parsing ecmascript source code failed
+  142 |     </nav>
+  143 |   );
+> 144 | }
+      | ^
+  145 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/(site)/layout.tsx

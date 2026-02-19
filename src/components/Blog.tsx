@@ -7,20 +7,11 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const defaultBlog = {
-  heading: "Insights that",
-  headingHighlight: "drive growth",
-  subheading: "Exploring emerging tech and real-world case studies.",
-  viewAllUrl: "#",
-  viewAllText: "View all articles →",
-  articles: [
-    { title: "Article 1", excerpt: "Excerpt...", url: "#", readTime: "4 min" },
-  ],
-};
-
 export default function Blog() {
   const content = useContent();
-  const b = content?.blog ?? defaultBlog;
+  if (!content) return null;
+
+  const b = content.blog;
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLElement | null)[]>([]);

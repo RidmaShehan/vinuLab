@@ -7,16 +7,11 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const defaultProjects = {
-  heading: "Explore some of our featured work",
-  subheading: "Scroll to discover",
-  keywords: ["Efficiency", "Design", "Projects"],
-  items: [{ name: "Project", url: "#" }],
-};
-
 export default function Projects() {
   const content = useContent();
-  const p = content?.projects ?? defaultProjects;
+  if (!content) return null;
+
+  const p = content.projects;
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);

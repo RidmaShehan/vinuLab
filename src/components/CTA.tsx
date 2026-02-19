@@ -7,22 +7,11 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const defaultContact = {
-  heading: "Ready to reclaim time",
-  headingHighlight: "and scale your business?",
-  subheading: "Discover how to modernize your digital presence.",
-  buttonText: "Request a free consultation",
-  defaultMessage: "Hi, I'd like to request a free consultation!",
-  contactEmail: "hello@vinulab.com",
-  linkedinUrl: "https://www.linkedin.com/company/vinulab/",
-  instagramUrl: "https://www.instagram.com/vinulab/",
-  privacyPolicyUrl: "https://vinulab.com/privacy-policy",
-  cookiePolicyUrl: "https://vinulab.com/cookie-policy",
-};
-
 export default function CTA() {
   const content = useContent();
-  const c = content?.contact ?? defaultContact;
+  if (!content) return null;
+
+  const c = content.contact;
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: c.defaultMessage });

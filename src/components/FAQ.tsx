@@ -7,15 +7,11 @@ import { useContent } from "@/context/ContentContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const defaultFaq = {
-  subheading: "Questions? We have answers",
-  heading: "Everything you need to know.",
-  items: [{ q: "Question?", a: "Answer." }],
-};
-
 export default function FAQ() {
   const content = useContent();
-  const f = content?.faq ?? defaultFaq;
+  if (!content) return null;
+
+  const f = content.faq;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);

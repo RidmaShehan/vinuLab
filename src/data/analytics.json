@@ -85,5 +85,15 @@
     "referrer": "http://localhost:3000/",
     "screenWidth": 1680,
     "screenHeight": 1050
+  },
+  {
+    "id": "1771476452202-lkps7ka",
+    "timestamp": 1771476452202,
+    "path": "/",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+    "referrer": "http://localhost:3000/",
+    "screenWidth": 1680,
+    "screenHeight": 1050
   }
 ]

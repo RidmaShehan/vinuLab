@@ -2222,6 +2222,11 @@
   --border-subtle: #00000014;
 }
 
+.light main, .light main section {
+  background-color: var(--section-bg);
+  color: var(--page-text);
+}
+
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

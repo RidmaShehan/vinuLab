@@ -15,6 +15,7 @@ export default function AdminPage() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Services");
+  const [contentSource, setContentSource] = useState<"database" | "file" | null>(null);
 
   useEffect(() => {
     fetch("/api/content")
@@ -22,6 +23,13 @@ export default function AdminPage() {
       .then(setContent)
       .catch(console.error)
       .finally(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/content/status")
+      .then((r) => r.json())
+      .then((data) => setContentSource(data.source ?? null))
+      .catch(() => setContentSource(null));
   }, []);
 
   const handleLogin = (e: React.FormEvent) => {
@@ -48,7 +56,7 @@ export default function AdminPage() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Save failed");
+        throw new Error(typeof data?.error === "string" ? data.error : "Save failed");
       }
       setMessage("Saved successfully! Refresh the main site to see changes.");
     } catch (err) {
@@ -76,7 +84,7 @@ export default function AdminPage() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Admin password"
+            placeholder="Default: vinulab-admin"
             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400"
             required
           />
@@ -182,6 +190,11 @@ export default function AdminPage() {
       <header className="border-b border-white/10 px-6 py-4 flex justify-between items-center flex-wrap gap-4">
         <h1 className="text-xl font-bold">VinuLab Admin</h1>
         <div className="flex items-center gap-4 flex-wrap">
+          {contentSource && (
+            <span className={`text-xs px-2 py-1 rounded ${contentSource === "database" ? "bg-green-500/20 text-green-400" : "bg-amber-500/20 text-amber-400"}`} title={contentSource === "database" ? "Content is stored in Supabase" : "Using file fallback. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database."}>
+              {contentSource === "database" ? "● Database" : "○ File"}
+            </span>
+          )}
           <div className="flex items-center gap-2">
             <span className="text-sm text-zinc-400">Site theme:</span>
             <select
@@ -197,8 +210,8 @@ export default function AdminPage() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Admin password"
-            className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm w-40 placeholder-zinc-500"
+            placeholder="e.g. vinulab-admin"
+            className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm w-44 placeholder-zinc-500"
           />
           <button
             onClick={handleSave}

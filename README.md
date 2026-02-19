@@ -70,7 +70,7 @@ Edit `.env.local` and set:
 
 - `NEXT_PUBLIC_SUPABASE_URL` – your project URL
 - `SUPABASE_SERVICE_ROLE_KEY` – your service_role key
-- `ADMIN_PASSWORD` – password for `/admin` (change in production)
+- `ADMIN_PASSWORD` – password for `/admin` (default: `vinulab-admin`). Use this when logging in and when clicking **Save**.
 
 ### 3. Create tables
 

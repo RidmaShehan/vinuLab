@@ -78,6 +78,12 @@
       "regex": "^/api/content(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/content(?:/)?$"
+    },
+    {
+      "page": "/api/content/status",
+      "regex": "^/api/content/status(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/content/status(?:/)?$"
     }
   ],
   "dataRoutes": [],

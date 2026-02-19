@@ -7,5 +7,6 @@
   "/api/analytics/track/route": "app/api/analytics/track/route.js",
   "/api/consultations/[id]/route": "app/api/consultations/[id]/route.js",
   "/api/consultations/route": "app/api/consultations/route.js",
-  "/api/content/route": "app/api/content/route.js"
+  "/api/content/route": "app/api/content/route.js",
+  "/api/content/status/route": "app/api/content/status/route.js"
 }

@@ -16,10 +16,13 @@ export async function GET() {
 
 export async function PUT(request: NextRequest) {
   try {
-    const password = request.headers.get("x-admin-password");
+    const password = request.headers.get("x-admin-password")?.trim();
     const expected = process.env.ADMIN_PASSWORD || "vinulab-admin";
-    if (password !== expected) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!password || password !== expected) {
+      return NextResponse.json(
+        { error: "Invalid admin password. Default is vinulab-admin (or set ADMIN_PASSWORD in .env.local)." },
+        { status: 401 }
+      );
     }
 
     const body = (await request.json()) as Content;

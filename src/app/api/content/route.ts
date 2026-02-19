@@ -4,7 +4,10 @@ import { getContent, saveContent, type Content } from "@/lib/content";
 export async function GET() {
   try {
     const content = await getContent();
-    return NextResponse.json(content);
+    const res = NextResponse.json(content);
+    // Dynamic content from DB: short cache so admin changes appear soon
+    res.headers.set("Cache-Control", "private, max-age=60, stale-while-revalidate=120");
+    return res;
   } catch (error) {
     console.error("Failed to load content:", error);
     return NextResponse.json({ error: "Failed to load content" }, { status: 500 });

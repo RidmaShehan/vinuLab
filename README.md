@@ -14,6 +14,7 @@ A full clone of the [Graffico](https://graffico.it) website - an award-nominated
 ## Tech Stack
 
 - **Next.js 16** - React framework
+- **Supabase** - PostgreSQL database (content, consultations, analytics)
 - **GSAP** - ScrollTrigger, timeline animations
 - **Lenis** - Smooth scroll library
 - **Tailwind CSS** - Styling
@@ -39,6 +40,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
+Without a database, the site uses local JSON files under `src/data/`. For dynamic content backed by PostgreSQL, set up Supabase below.
+
 ## Build
 
 ```bash
@@ -46,20 +49,64 @@ npm run build
 npm start
 ```
 
+## Database (Supabase / PostgreSQL)
+
+The site can store **content**, **consultations**, and **analytics** in Supabase (PostgreSQL). When configured, the admin panel saves to the database and the public site reads from it.
+
+### 1. Create a Supabase project
+
+1. Go to [supabase.com](https://supabase.com) and create a project.
+2. In **Project Settings → API**, copy:
+   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
+   - **service_role** key (secret) → `SUPABASE_SERVICE_ROLE_KEY`
+
+### 2. Environment variables
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and set:
+
+- `NEXT_PUBLIC_SUPABASE_URL` – your project URL
+- `SUPABASE_SERVICE_ROLE_KEY` – your service_role key
+- `ADMIN_PASSWORD` – password for `/admin` (change in production)
+
+### 3. Create tables
+
+In the Supabase dashboard, open **SQL Editor** and run the migration:
+
+- Copy the contents of `supabase/migrations/001_initial_schema.sql`
+- Paste and run it in the SQL Editor
+
+### 4. Seed initial content (optional)
+
+**Option A – From the admin:**  
+Open [http://localhost:3000/admin](http://localhost:3000/admin), log in, and click **Save**. The current content from `src/data/content.json` is written to the database.
+
+**Option B – From the command line:**
+
+```bash
+# With env vars loaded (e.g. from .env.local on Unix):
+node scripts/seed-supabase.js
+```
+
+After this, the site uses the database: admin changes are stored in Supabase and the frontend shows that data on each load.
+
 ## Project Structure
 
 ```
 src/
-├── app/           # Next.js App Router
-├── components/    # React components
-│   ├── HeroSection.tsx
-│   ├── HorizontalProjects.tsx
-│   ├── WhatWeOffer.tsx
-│   ├── ServiceGrid.tsx
-│   ├── Navbar.tsx
-│   └── Footer.tsx
-└── context/
-    └── ScrollContext.tsx  # Lenis + smooth scroll
+├── app/              # Next.js App Router (pages, API routes, admin)
+├── components/       # React components
+├── context/         # React context (scroll, theme, content)
+├── lib/              # Content, Supabase, consultations, analytics
+└── data/             # Fallback JSON (used when Supabase not configured)
+supabase/
+├── migrations/       # SQL schema (run in Supabase SQL Editor)
+└── seed.sql          # Optional SQL seed for site_content
+scripts/
+└── seed-supabase.js  # Optional: seed DB from content.json
 ```
 
 ## Credits

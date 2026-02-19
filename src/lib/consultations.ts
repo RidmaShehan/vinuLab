@@ -1,3 +1,5 @@
+import path from "path";
+import fs from "fs";
 import { supabase } from "./supabase";
 
 export interface ConsultationRequest {
@@ -9,12 +11,12 @@ export interface ConsultationRequest {
   gotIt: boolean;
 }
 
+const consultationsPath = () => path.join(process.cwd(), "src", "data", "consultations.json");
+
 function getConsultationsFromFile(): ConsultationRequest[] {
   try {
-    const fs = require("fs");
-    const path = require("path");
-    const raw = fs.readFileSync(path.join(process.cwd(), "src", "data", "consultations.json"), "utf-8");
-    return JSON.parse(raw);
+    const raw = fs.readFileSync(consultationsPath(), "utf-8");
+    return JSON.parse(raw) as ConsultationRequest[];
   } catch {
     return [];
   }
@@ -61,11 +63,9 @@ export async function addConsultation(
     if (error) throw new Error(error.message);
     return record;
   }
-  const fs = require("fs");
-  const path = require("path");
   const list = getConsultationsFromFile();
   list.unshift(record);
-  fs.writeFileSync(path.join(process.cwd(), "src", "data", "consultations.json"), JSON.stringify(list, null, 2), "utf-8");
+  fs.writeFileSync(consultationsPath(), JSON.stringify(list, null, 2), "utf-8");
   return record;
 }
 
@@ -89,12 +89,10 @@ export async function updateConsultationGotIt(id: string, gotIt: boolean): Promi
     }
     return null;
   }
-  const fs = require("fs");
-  const path = require("path");
   const list = getConsultationsFromFile();
   const idx = list.findIndex((r) => r.id === id);
   if (idx === -1) return null;
   list[idx] = { ...list[idx], gotIt };
-  fs.writeFileSync(path.join(process.cwd(), "src", "data", "consultations.json"), JSON.stringify(list, null, 2), "utf-8");
+  fs.writeFileSync(consultationsPath(), JSON.stringify(list, null, 2), "utf-8");
   return list[idx];
 }

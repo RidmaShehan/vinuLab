@@ -1,3 +1,5 @@
+import path from "path";
+import fs from "fs";
 import { supabase } from "./supabase";
 
 export interface VisitRecord {
@@ -15,12 +17,12 @@ export interface VisitRecord {
   screenHeight?: number;
 }
 
+const analyticsPath = () => path.join(process.cwd(), "src", "data", "analytics.json");
+
 function getAnalyticsFromFile(): VisitRecord[] {
   try {
-    const fs = require("fs");
-    const path = require("path");
-    const raw = fs.readFileSync(path.join(process.cwd(), "src", "data", "analytics.json"), "utf-8");
-    return JSON.parse(raw);
+    const raw = fs.readFileSync(analyticsPath(), "utf-8");
+    return JSON.parse(raw) as VisitRecord[];
   } catch {
     return [];
   }
@@ -41,7 +43,7 @@ export async function getAnalytics(): Promise<VisitRecord[]> {
         country: r.country,
         region: r.region,
         city: r.city,
-        ll: r.ll,
+        ll: r.ll as [number, number] | undefined,
         userAgent: r.user_agent,
         referrer: r.referrer,
         screenWidth: r.screen_width,
@@ -71,9 +73,7 @@ export async function appendVisit(record: VisitRecord): Promise<void> {
     if (error) throw new Error(error.message);
     return;
   }
-  const fs = require("fs");
-  const path = require("path");
   const data = getAnalyticsFromFile();
   data.push(record);
-  fs.writeFileSync(path.join(process.cwd(), "src", "data", "analytics.json"), JSON.stringify(data, null, 2), "utf-8");
+  fs.writeFileSync(analyticsPath(), JSON.stringify(data, null, 2), "utf-8");
 }

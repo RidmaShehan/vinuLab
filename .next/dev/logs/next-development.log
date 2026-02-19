@@ -117,3 +117,6 @@ Import trace:
     ./src/components/Navbar.tsx
     ./src/app/(site)/layout.tsx
 [00:01:34.605] Server  LOG     ✓ Compiled in 196ms
+[00:35:49.930] Server  WARN    [vinulab] Supabase not configured. Using file fallback for content/consultations/analytics. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database.
+[00:35:49.960] Server  WARN    [vinulab] Supabase not configured. Using file fallback for content/consultations/analytics. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database.
+[00:37:18.435] Server  LOG     ✓ Compiled in 58ms

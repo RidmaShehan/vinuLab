@@ -150,11 +150,11 @@ async function GET() {
 }
 async function PUT(request) {
     try {
-        const password = request.headers.get("x-admin-password");
+        const password = request.headers.get("x-admin-password")?.trim();
         const expected = process.env.ADMIN_PASSWORD || "vinulab-admin";
-        if (password !== expected) {
+        if (!password || password !== expected) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Unauthorized"
+                error: "Invalid admin password. Default is vinulab-admin (or set ADMIN_PASSWORD in .env.local)."
             }, {
                 status: 401
             });

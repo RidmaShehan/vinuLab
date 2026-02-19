@@ -6,3 +6,4 @@
 [00:03:24.364] Server  LOG     ✓ Compiled in 70ms
 [00:03:35.745] Server  LOG     ✓ Compiled in 58ms
 [00:03:42.252] Server  LOG     ✓ Compiled in 53ms
+[00:05:58.833] Server  WARN    [vinulab] Supabase not configured. Using file fallback for content/consultations/analytics. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local to use the database.
